@@ -20,6 +20,20 @@ public class AnimalTest {
   }
 
   @Test
+  public void animal_find() {
+    Animal animal = new Animal("bear");
+    Animal animalTwo = new Animal("coyote");
+    assertEquals(animalTwo.getId(), Animal.find(animalTwo.getId()).getId());
+  }
+
+  @Test
+  public void animal_all() {
+    Animal animal = new Animal("bear");
+    Animal animalTwo = new Animal("coyote");
+    assertEquals(2, Animal.all().size());
+  }
+
+  @Test
   public void animal_delete() {
     Animal animal = new Animal("bear");
     animal.delete();

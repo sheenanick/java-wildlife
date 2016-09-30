@@ -28,15 +28,6 @@ public class Animal {
     }
   }
 
-  public void delete() {
-    try(Connection con = DB.sql2o.open()) {
-      String sql = "DELETE from animals WHERE id = :id";
-      con.createQuery(sql)
-        .addParameter("id", id)
-        .executeUpdate();
-    }
-  }
-
   public static Animal find(int id) {
     try(Connection con = DB.sql2o.open()) {
       String sql = "SELECT * FROM animals WHERE id = :id";
@@ -51,6 +42,15 @@ public class Animal {
       String sql = "SELECT * FROM animals";
       return con.createQuery(sql)
         .executeAndFetch(Animal.class);
+    }
+  }
+
+  public void delete() {
+    try(Connection con = DB.sql2o.open()) {
+      String sql = "DELETE from animals WHERE id = :id";
+      con.createQuery(sql)
+        .addParameter("id", id)
+        .executeUpdate();
     }
   }
 
