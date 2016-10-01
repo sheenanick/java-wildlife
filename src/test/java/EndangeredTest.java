@@ -24,7 +24,7 @@ public class EndangeredTest {
   @Test
   public void endangered_getType_string() {
     Endangered endangered = new Endangered("bald eagle", "healthy", "newborn");
-    assertEquals("endangered", endangered.getType());
+    assertEquals("Endangered", endangered.getType());
   }
 
   @Test

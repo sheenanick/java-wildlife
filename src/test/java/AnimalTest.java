@@ -22,7 +22,7 @@ public class AnimalTest {
   @Test
   public void animal_getType_string() {
     Animal animal = new Animal("bear");
-    assertEquals("non-endangered", animal.getType());
+    assertEquals("Non-endangered", animal.getType());
   }
 
   @Test

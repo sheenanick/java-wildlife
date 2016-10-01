@@ -4,8 +4,9 @@
     <h3>All Sightings:</h3>
     #foreach($sighting in $sightings)
       <h5><a href="/animals/$sighting.getAnimalId()">$Animal.find($sighting.getAnimalId()).getName()</a></h5>
+      <p><em>$sighting.getTimestamp()</em></p>
       <p>
-        <strong>Location:</strong> $sighting.getLocation(), <strong>Ranger:</strong> $sighting.getRangerName()
+        Location: $sighting.getLocation(), Ranger: $sighting.getRangerName()
         <a href="/sightings/$sighting.getId()/edit" class="edit"> [edit]</a>
         <a href="/sightings/$sighting.getId()/delete" class="delete"> [delete]</a>
       </p>

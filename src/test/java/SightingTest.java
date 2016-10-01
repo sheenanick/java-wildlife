@@ -32,6 +32,12 @@ public class SightingTest {
   }
 
   @Test
+  public void sighting_getTimestamp_true() {
+    Sighting sighting = new Sighting(1, "Zone A", "Walker");
+    assertTrue(sighting.getTimestamp() instanceof String);
+  }
+
+  @Test
   public void sighting_find() {
     Sighting sighting = new Sighting(1, "Zone A", "Walker");
     Sighting sightingTwo = new Sighting(2, "Zone B", "Jones");

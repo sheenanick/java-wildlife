@@ -15,7 +15,7 @@
   <div class="col-sm-3">
     <h3>All Sightings:</h3>
     #foreach($sighting in $Sighting.allByAnimal($animal.getId()))
-      <p>Location: $sighting.getLocation(), Ranger: $sighting.getRangerName()</p>
+      <p>Location: $sighting.getLocation(), Ranger: $sighting.getRangerName() <em>$sighting.getTimestamp()</em></p>
     #end
   </div>
 

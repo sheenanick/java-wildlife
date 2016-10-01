@@ -35,8 +35,8 @@ public class Sighting {
     return rangerName;
   }
 
-  public Timestamp getTimestamp() {
-    return timestamp;
+  public String getTimestamp() {
+    return String.format("%1$TD %1$TR", timestamp);
   }
 
   public void setLocation(String location) {
@@ -70,7 +70,7 @@ public class Sighting {
 
   public static List<Sighting> all() {
     try(Connection con = DB.sql2o.open()) {
-      String sql = "SELECT * FROM sightings";
+      String sql = "SELECT * FROM sightings ORDER BY timestamp DESC";
       return con.createQuery(sql)
         .executeAndFetch(Sighting.class);
     }
@@ -78,7 +78,7 @@ public class Sighting {
 
   public static List<Sighting> allByAnimal(int animalId) {
     try(Connection con = DB.sql2o.open()) {
-      String sql = "SELECT * FROM sightings WHERE animalid = :animalId";
+      String sql = "SELECT * FROM sightings WHERE animalid = :animalId ORDER BY timestamp DESC";
       return con.createQuery(sql)
         .addParameter("animalId", animalId)
         .executeAndFetch(Sighting.class);
