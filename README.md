@@ -19,6 +19,7 @@ This is a web application that allows Forest Service Rangers to record wildlife 
 | Store animal name                | 'coyote'               | 'coyote'                             |
 | Store endangered animal's health | 'healthy'              | 'healthy'                            |
 | Store endangered animal's age    | 'newborn'              | 'newborn'                            |
+| Store animal type                | 'endangered'           | 'endangered'                         |
 | Return all animals               | All animals            | {'coyote', 'bear', 'deer'}           |
 | Store animal id in sighting      | 1                      | 1                                    |
 | Store location in sighting       | 'Zone A'               | 'Zone A'                             |
