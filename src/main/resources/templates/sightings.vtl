@@ -3,8 +3,12 @@
     <a href="/sightings/new"><button type="button" class="btn btn-primary">Add Sighting</button></a>
     <h3>All Sightings:</h3>
     #foreach($sighting in $sightings)
-      <a href="/animals/$sighting.getAnimalId()"><h4>$Animal.find($sighting.getAnimalId()).getName()</h4></a>
-      <h5>Location: $sighting.getLocation(), Ranger: $sighting.getRangerName()</h5>
+      <h5><a href="/animals/$sighting.getAnimalId()">$Animal.find($sighting.getAnimalId()).getName()</a></h5>
+      <p>
+        <strong>Location:</strong> $sighting.getLocation(), <strong>Ranger:</strong> $sighting.getRangerName()
+        <a href="/sightings/$sighting.getId()/edit" class="edit"> [edit]</a>
+        <a href="/sightings/$sighting.getId()/delete" class="delete"> [delete]</a>
+      </p>
     #end
   </div>
 </div>
