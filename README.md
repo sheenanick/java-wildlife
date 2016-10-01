@@ -23,7 +23,7 @@ This is a web application that allows Forest Service Rangers to record wildlife 
 | Return all endangered animals    | All endangered animals | {'bald eagle'}                       |
 | Store animal id in sighting      | 1                      | 1                                    |
 | Store location in sighting       | 'Zone A'               | 'Zone A'                             |
-| Store ranger name in sighting    | 'Walker'               | 'Walker'                             |
+| Store ranger name in sighting    | 'Walker'               | 'Walker'                            |
 | List all sightings by animal     | bear sightings         | {Sighting 1, Sighting 2, Sighting 3} |
 | Update animal information        | 'grizzly bear'         | 'grizzly bear'                       |
 | Update sighting information      | 1, 'Zone B', 'Walker'  | 1, 'Zone B', 'Walker'                |
@@ -35,7 +35,7 @@ This is a web application that allows Forest Service Rangers to record wildlife 
 In PSQL:
 * CREATE DATABASE wildlife_tracker;
 * CREATE TABLE animals (id serial PRIMARY KEY, name varchar, health varchar, age varchar, type varchar);
-* CREATE TABLE sightings (id serial PRIMARY KEY, animal_id int, location varchar, ranger_name varchar);
+* CREATE TABLE sightings (id serial PRIMARY KEY, animalid int, location varchar, rangername varchar);
 
 In your terminal:
 * Clone this repository from [github](https://github.com/sheenanick/java-wildlife).
