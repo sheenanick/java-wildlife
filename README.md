@@ -38,7 +38,7 @@ In PSQL:
 * CREATE TABLE sightings (id serial PRIMARY KEY, animal_id int, location varchar, ranger_name varchar);
 
 In your terminal:
-* Clone this repository from [github](https://github.com/sheenanick/java-wildlife-tracker).
+* Clone this repository from [github](https://github.com/sheenanick/java-wildlife).
 * Run the main method by typing 'gradle run'.
 
 View http://localhost:4567 in a web browser of your choice.
