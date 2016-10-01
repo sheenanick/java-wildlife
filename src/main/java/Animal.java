@@ -8,6 +8,9 @@ public class Animal {
   public static final String DATABASE_TYPE = "non-endangered";
 
   public Animal(String name) {
+    if (name.equals("")){
+      throw new IllegalArgumentException("Please enter an animal name.");
+    }
     this.name = name;
     type = DATABASE_TYPE;
   }

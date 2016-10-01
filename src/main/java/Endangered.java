@@ -8,6 +8,9 @@ public class Endangered extends Animal {
 
   public Endangered(String name, String health, String age) {
     super(name);
+    if (name.equals("") || health.equals("") || age.equals("")){
+      throw new IllegalArgumentException("Please enter all input fields.");
+    }
     this.health = health;
     this.age = age;
     type = DATABASE_TYPE;

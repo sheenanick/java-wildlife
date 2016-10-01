@@ -41,8 +41,12 @@ public class App {
     post("/animals/new", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
       String name = request.queryParams("name");
-      Animal animal = new Animal(name);
-      animal.save();
+      try {
+        Animal animal = new Animal(name);
+        animal.save();
+      } catch (IllegalArgumentException exception) {
+        System.out.println("Please enter an animal name.");
+      }
       response.redirect("/");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
@@ -58,8 +62,12 @@ public class App {
       String name = request.queryParams("name");
       String health = request.queryParams("health");
       String age = request.queryParams("age");
-      Endangered endangered = new Endangered(name, health, age);
-      endangered.save();
+      try {
+        Endangered endangered = new Endangered(name, health, age);
+        endangered.save();
+      } catch (IllegalArgumentException exception) {
+        System.out.println("Please enter all input fields.");
+      }
       response.redirect("/");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
@@ -76,7 +84,11 @@ public class App {
       int animalId = Integer.parseInt(request.queryParams("animal"));
       String location = request.queryParams("location");
       String rangerName = request.queryParams("rangerName");
-      Sighting sighting = new Sighting(animalId, location, rangerName);
+      try {
+        Sighting sighting = new Sighting(animalId, location, rangerName);
+      } catch (IllegalArgumentException exception) {
+        System.out.println("Please enter Ranger name.");
+      }
       response.redirect("/");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());

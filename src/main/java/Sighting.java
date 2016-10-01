@@ -8,6 +8,9 @@ public class Sighting {
   private String rangerName;
 
   public Sighting(int animalId, String location, String rangerName) {
+    if (rangerName.equals("")){
+      throw new IllegalArgumentException("Please enter Ranger name.");
+    }
     this.animalId = animalId;
     this.location = location;
     this.rangerName = rangerName;
