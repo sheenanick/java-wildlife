@@ -1,8 +1,13 @@
+<div class="text-center">
+  <h2>$animal.getName()</h2>
+  <a href="/animals/$animal.getId()/edit" class="edit"> [edit]</a>
+  <a href="/animals/$animal.getId()/delete" class="delete"> [delete]</a>
+</div>
 <div class="row">
   <div class="col-sm-3 col-sm-offset-3">
-    <h2>$animal.getName()</h2>
-    <h4><em>$animal.getType()</em></h4>
-    #if($animal.getType().equals("endangered"))
+    <h3>Animal Details:</h3>
+    <h5>Type: $animal.getType()</em></h5>
+    #if($animal.getType().equals("Endangered"))
       <h5>Health: $endangered.getHealth()</h5>
       <h5>Age: $endangered.getAge()</h5>
     #end

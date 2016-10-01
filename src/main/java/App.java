@@ -134,7 +134,7 @@ public class App {
       Animal animal = Animal.find(id);
       animal.setName(name);
       animal.update();
-      if(animal.getType().equals("endangered")) {
+      if(animal.getType().equals("Endangered")) {
         Endangered endangered = Endangered.find(id);
         endangered.setHealth(health);
         endangered.setAge(age);

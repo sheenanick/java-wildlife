@@ -4,7 +4,7 @@ import java.util.List;
 public class Endangered extends Animal {
   public String health;
   public String age;
-  public static final String DATABASE_TYPE = "endangered";
+  public static final String DATABASE_TYPE = "Endangered";
 
   public Endangered(String name, String health, String age) {
     super(name);

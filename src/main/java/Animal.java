@@ -5,7 +5,7 @@ public class Animal {
   public int id;
   public String name;
   public String type;
-  public static final String DATABASE_TYPE = "non-endangered";
+  public static final String DATABASE_TYPE = "Non-endangered";
 
   public Animal(String name) {
     if (name.equals("")){
@@ -66,6 +66,11 @@ public class Animal {
     try(Connection con = DB.sql2o.open()) {
       String sql = "DELETE from animals WHERE id = :id";
       con.createQuery(sql)
+        .addParameter("id", id)
+        .throwOnMappingFailure(false)
+        .executeUpdate();
+      String sql2 = "DELETE from sightings WHERE animalid = :id";
+      con.createQuery(sql2)
         .addParameter("id", id)
         .throwOnMappingFailure(false)
         .executeUpdate();
