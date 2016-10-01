@@ -8,10 +8,6 @@
 
 This is a web application that allows Forest Service Rangers to record wildlife sightings. There are two categories of wildlife: Animals and Endangered Animals.
 
-## Database Schema
-
-![database diagram](database.png)
-
 ## Technical Specifications
 
 | Behavior                         | Example Input          | Example Output                       |
@@ -24,6 +20,7 @@ This is a web application that allows Forest Service Rangers to record wildlife 
 | Store animal id in sighting      | 1                      | 1                                    |
 | Store location in sighting       | 'Zone A'               | 'Zone A'                             |
 | Store ranger name in sighting    | 'Walker'               | 'Walker'                             |
+| Store time of sighting report    |  now                   | '9/30/16 8:30'                       |
 | List all sightings by animal     | bear sightings         | {Sighting 1, Sighting 2, Sighting 3} |
 | Update animal information        | 'grizzly bear'         | 'grizzly bear'                       |
 | Update sighting information      | 1, 'Zone B', 'Walker'  | 1, 'Zone B', 'Walker'                |
@@ -35,7 +32,7 @@ This is a web application that allows Forest Service Rangers to record wildlife 
 In PSQL:
 * CREATE DATABASE wildlife_tracker;
 * CREATE TABLE animals (id serial PRIMARY KEY, name varchar, health varchar, age varchar, type varchar);
-* CREATE TABLE sightings (id serial PRIMARY KEY, animalid int, location varchar, rangername varchar);
+* CREATE TABLE sightings (id serial PRIMARY KEY, animalid int, location varchar, rangername varchar, timestamp timestamp);
 
 In your terminal:
 * Clone this repository from [github](https://github.com/sheenanick/java-wildlife).
