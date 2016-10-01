@@ -20,11 +20,16 @@ public class Animal {
     return name;
   }
 
+  public String getType() {
+    return type;
+  }
+
   public void save() {
     try(Connection con = DB.sql2o.open()) {
-      String sql = "INSERT INTO animals (name) VALUES (:name)";
+      String sql = "INSERT INTO animals (name, type) VALUES (:name, :type)";
       this.id = (int) con.createQuery(sql, true)
         .addParameter("name", name)
+        .addParameter("type", type)
         .throwOnMappingFailure(false)
         .executeUpdate()
         .getKey();

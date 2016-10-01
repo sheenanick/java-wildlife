@@ -21,4 +21,10 @@ public class EndangeredTest {
     assertTrue(Endangered.all().size() > 0);
   }
 
+  @Test
+  public void endangered_getType_string() {
+    Endangered endangered = new Endangered("bald eagle", "healthy", "newborn");
+    assertEquals("endangered", endangered.getType());
+  }
+
 }
