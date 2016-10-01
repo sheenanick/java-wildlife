@@ -1,5 +1,5 @@
-<h1>All Sightings:</h1>
-
+<h3>All Sightings:</h3>
+<a href="/sightings/new"><h4>Add Sighting</h4></a>
 #foreach($sighting in $sightings)
-  <h3>Location: $sighting.getLocation(), Ranger: $sighting.getRangerName()</h3>
+  <h5>Location: $sighting.getLocation(), Ranger: $sighting.getRangerName()</h5>
 #end

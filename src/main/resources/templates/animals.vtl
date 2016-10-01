@@ -1,5 +1,6 @@
-<h1>All Animals:</h1>
-
+<h3>All Animals:</h3>
+<a href="/animals/new"><h4>Add Animal</h4></a>
+<a href="/endangered/new"><h4>Add Endangered Animal</h4></a>
 #foreach($animal in $animals)
-  <h3>$animal.getName()</h3>
+  <h5>$animal.getName() ($animal.getType())</h5>
 #end
