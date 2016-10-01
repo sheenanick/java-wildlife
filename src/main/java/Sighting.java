@@ -1,11 +1,13 @@
 import org.sql2o.*;
 import java.util.List;
+import java.sql.Timestamp;
 
 public class Sighting {
   private int id;
   private int animalId;
   private String location;
   private String rangerName;
+  private Timestamp timestamp;
 
   public Sighting(int animalId, String location, String rangerName) {
     if (rangerName.equals("")){
@@ -33,6 +35,10 @@ public class Sighting {
     return rangerName;
   }
 
+  public Timestamp getTimestamp() {
+    return timestamp;
+  }
+
   public void setLocation(String location) {
     this.location = location;
   }
@@ -43,7 +49,7 @@ public class Sighting {
 
   public void save() {
     try(Connection con = DB.sql2o.open()) {
-      String sql = "INSERT INTO sightings (animalid, location, rangername) VALUES (:animalId, :location, :rangerName)";
+      String sql = "INSERT INTO sightings (animalid, location, rangername, timestamp) VALUES (:animalId, :location, :rangerName, now())";
       this.id = (int) con.createQuery(sql, true)
         .addParameter("animalId", this.animalId)
         .addParameter("location", this.location)
