@@ -28,6 +28,17 @@ public class EndangeredTest {
   }
 
   @Test
+  public void endangered_getHealth_string() {
+    Endangered endangered = new Endangered("bald eagle", "healthy", "newborn");
+    assertEquals("healthy", endangered.getHealth());
+  }
+  @Test
+  public void endangered_getAge_string() {
+    Endangered endangered = new Endangered("bald eagle", "healthy", "newborn");
+    assertEquals("newborn", endangered.getAge());
+  }
+
+  @Test
   public void endangered_setHealth_string() {
     Endangered endangered = new Endangered("bald eagle", "healthy", "newborn");
     endangered.setHealth("ill");
