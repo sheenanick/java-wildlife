@@ -27,4 +27,27 @@ public class EndangeredTest {
     assertEquals("endangered", endangered.getType());
   }
 
+  @Test
+  public void endangered_setHealth_string() {
+    Endangered endangered = new Endangered("bald eagle", "healthy", "newborn");
+    endangered.setHealth("ill");
+    assertEquals("ill", endangered.getHealth());
+  }
+
+  @Test
+  public void endangered_setAge_string() {
+    Endangered endangered = new Endangered("bald eagle", "healthy", "newborn");
+    endangered.setAge("adult");
+    assertEquals("adult", endangered.getAge());
+  }
+
+  @Test
+  public void endangered_update() {
+    Endangered endangered = new Endangered("bald eagle", "healthy", "newborn");
+    endangered.save();
+    endangered.setName("eagle");
+    endangered.update();
+    assertEquals("eagle", Endangered.find(endangered.getId()).getName());
+  }
+
 }

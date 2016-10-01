@@ -51,4 +51,13 @@ public class AnimalTest {
     assertEquals(0, Animal.all().size());
   }
 
+  @Test
+  public void animal_update() {
+    Animal animal = new Animal("bear");
+    animal.save();
+    animal.setName("grizzly bear");
+    animal.update();
+    assertEquals("grizzly bear", Animal.find(animal.getId()).getName());
+  }
+
 }

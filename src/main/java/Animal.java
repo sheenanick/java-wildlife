@@ -24,6 +24,10 @@ public class Animal {
     return type;
   }
 
+  public void setName(String name) {
+    this.name = name;
+  }
+
   public void save() {
     try(Connection con = DB.sql2o.open()) {
       String sql = "INSERT INTO animals (name, type) VALUES (:name, :type)";
@@ -59,6 +63,17 @@ public class Animal {
     try(Connection con = DB.sql2o.open()) {
       String sql = "DELETE from animals WHERE id = :id";
       con.createQuery(sql)
+        .addParameter("id", id)
+        .throwOnMappingFailure(false)
+        .executeUpdate();
+    }
+  }
+
+  public void update() {
+    try(Connection con = DB.sql2o.open()) {
+      String sql = "UPDATE animals SET name = :name WHERE id = :id";
+      con.createQuery(sql)
+        .addParameter("name", name)
         .addParameter("id", id)
         .throwOnMappingFailure(false)
         .executeUpdate();
