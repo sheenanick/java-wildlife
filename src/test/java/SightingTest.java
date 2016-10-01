@@ -59,4 +59,13 @@ public class SightingTest {
     assertEquals(0, Sighting.all().size());
   }
 
+  @Test
+  public void sighting_update() {
+    Sighting sighting = new Sighting(1, "Zone A", "Walker");
+    sighting.save();
+    sighting.setLocation("Zone B");
+    sighting.update();
+    assertEquals("Zone B", Sighting.find(sighting.getId()).getLocation());
+  }
+
 }

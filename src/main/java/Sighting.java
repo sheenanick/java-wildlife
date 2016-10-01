@@ -33,6 +33,14 @@ public class Sighting {
     return rangerName;
   }
 
+  public void setLocation(String location) {
+    this.location = location;
+  }
+
+  public void setRangerName(String rangerName) {
+    this.rangerName = rangerName;
+  }
+
   public void save() {
     try(Connection con = DB.sql2o.open()) {
       String sql = "INSERT INTO sightings (animalid, location, rangername) VALUES (:animalId, :location, :rangerName)";
@@ -42,15 +50,6 @@ public class Sighting {
         .addParameter("rangerName", this.rangerName)
         .executeUpdate()
         .getKey();
-    }
-  }
-
-  public void delete() {
-    try(Connection con = DB.sql2o.open()) {
-      String sql = "DELETE from sightings WHERE id = :id";
-      con.createQuery(sql)
-        .addParameter("id", this.id)
-        .executeUpdate();
     }
   }
 
@@ -77,6 +76,27 @@ public class Sighting {
       return con.createQuery(sql)
         .addParameter("animalId", animalId)
         .executeAndFetch(Sighting.class);
+    }
+  }
+
+  public void delete() {
+    try(Connection con = DB.sql2o.open()) {
+      String sql = "DELETE from sightings WHERE id = :id";
+      con.createQuery(sql)
+        .addParameter("id", this.id)
+        .executeUpdate();
+    }
+  }
+
+  public void update() {
+    try(Connection con = DB.sql2o.open()) {
+      String sql = "UPDATE sightings SET location = :location, rangername = :rangername WHERE id = :id";
+      con.createQuery(sql)
+        .addParameter("location", location)
+        .addParameter("rangername", rangerName)
+        .addParameter("id", id)
+        .throwOnMappingFailure(false)
+        .executeUpdate();
     }
   }
 
