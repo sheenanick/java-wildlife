@@ -20,10 +20,9 @@ This is a web application that allows Forest Service Rangers to record wildlife 
 | Store endangered animal's health | 'healthy'              | 'healthy'                            |
 | Store endangered animal's age    | 'newborn'              | 'newborn'                            |
 | Return all animals               | All animals            | {'coyote', 'bear', 'deer'}           |
-| Return all endangered animals    | All endangered animals | {'bald eagle'}                       |
 | Store animal id in sighting      | 1                      | 1                                    |
 | Store location in sighting       | 'Zone A'               | 'Zone A'                             |
-| Store ranger name in sighting    | 'Walker'               | 'Walker'                            |
+| Store ranger name in sighting    | 'Walker'               | 'Walker'                             |
 | List all sightings by animal     | bear sightings         | {Sighting 1, Sighting 2, Sighting 3} |
 | Update animal information        | 'grizzly bear'         | 'grizzly bear'                       |
 | Update sighting information      | 1, 'Zone B', 'Walker'  | 1, 'Zone B', 'Walker'                |
