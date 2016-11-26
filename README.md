@@ -1,8 +1,8 @@
 # Wildlife Tracker
 
-#### Epicodus Java Week 4 Independent Project, 09.30.2016
+#### _Epicodus Java Week 4 Independent Project, 09.30.2016_
 
-#### By _**Sheena Nickerson**_
+#### By **Sheena Nickerson**
 
 ## Description
 
@@ -29,31 +29,33 @@ This is a web application that allows Forest Service Rangers to record wildlife 
 
 ## Setup/Installation Requirements
 
+You will need [gradle](https://gradle.org/gradle-download/) and Postgres installed on your device, and make sure the Postgres server is running.
+
 In PSQL:
-* CREATE DATABASE wildlife_tracker;
-* CREATE TABLE animals (id serial PRIMARY KEY, name varchar, health varchar, age varchar, type varchar);
-* CREATE TABLE sightings (id serial PRIMARY KEY, animalid int, location varchar, rangername varchar, timestamp timestamp);
+* `CREATE DATABASE wildlife_tracker;`
+* `CREATE TABLE animals (id serial PRIMARY KEY, name varchar, health varchar, age varchar, type varchar);`
+* `CREATE TABLE sightings (id serial PRIMARY KEY, animalid int, location varchar, rangername varchar, timestamp timestamp);`
 
 In your terminal:
-* Clone this repository from [github](https://github.com/sheenanick/java-wildlife).
-* Run the main method by typing 'gradle run'.
+* `$ git clone https://github.com/sheenanick/java-wildlife` to clone this repository
+* Navigate to the directory and `$ gradle run` to run the application
 
 View http://localhost:4567 in a web browser of your choice.
 
 ## Support and contact details
 
-Please feel free to contact me at sheenanick@gmail.com if you have any issues or questions, ideas or concerns.
+Please feel free to contact sheenanick@gmail.com if you have any issues or questions, ideas or concerns.
 
 ## Technologies Used
 
-Java
-JUnit
-Spark
-Gradle
-PostgreSQL
+* Java
+* JUnit
+* Spark
+* Gradle
+* PostgreSQL
 
 ### License
 
-*Licensed under GPL.*
+This software is licensed under the MIT license.
 
 Copyright (c) 2016 **_Sheena Nickerson_**
