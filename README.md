@@ -32,13 +32,14 @@ This is a web application that allows Forest Service Rangers to record wildlife 
 You will need [gradle](https://gradle.org/gradle-download/) and Postgres installed on your device, and make sure the Postgres server is running.
 
 In PSQL:
-* `CREATE DATABASE wildlife_tracker;`
-* `CREATE TABLE animals (id serial PRIMARY KEY, name varchar, health varchar, age varchar, type varchar);`
-* `CREATE TABLE sightings (id serial PRIMARY KEY, animalid int, location varchar, rangername varchar, timestamp timestamp);`
+* `$ CREATE DATABASE wildlife_tracker;`
+* `$ CREATE TABLE animals (id serial PRIMARY KEY, name varchar, health varchar, age varchar, type varchar);`
+* `$ CREATE TABLE sightings (id serial PRIMARY KEY, animalid int, location varchar, rangername varchar, timestamp timestamp);`
 
 In your terminal:
 * `$ git clone https://github.com/sheenanick/java-wildlife` to clone this repository
-* Navigate to the directory and `$ gradle run` to run the application
+* `$ cd java-wildlife` to navigate to the cloned project directory.
+* `$ gradle run` to run the application.
 
 View http://localhost:4567 in a web browser of your choice.
 
